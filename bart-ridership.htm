@@ -1,0 +1,192 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BART Ridership | Kaggle</title>
+  <meta charset="utf-8" />
+    <meta name="robots" content="index, follow" />
+  <meta name="description" content="Bay Area Rapid Transit hourly ridership broken up by year (starting 2011)" />
+    <meta name="keywords" content="tabular,transportation,travel,rail transport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+  <meta name="theme-color" content="#008ABC" />
+  <script nonce="nhTGsIOFrUMVW2LM8ZoRGQ==" type="text/javascript">
+    window["pageRequestStartTime"] = 1725216407853;
+    window["pageRequestEndTime"] = 1725216408009;
+    window["initialPageLoadStartTime"] = new Date().getTime();
+  </script>
+  <script nonce="nhTGsIOFrUMVW2LM8ZoRGQ==" id="gsi-client" src="https://accounts.google.com/gsi/client" async defer></script>
+  <script nonce="nhTGsIOFrUMVW2LM8ZoRGQ==">window.KAGGLE_JUPYTERLAB_PATH = "/static/jl2-static/jupyterlab-index-de53cf5bbd46ca5e45d1.html";</script>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" /><link rel="preconnect" href="https://stats.g.doubleclick.net" /><link rel="preconnect" href="https://storage.googleapis.com" /><link rel="preconnect" href="https://apis.google.com" />
+  <link href="/static/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="manifest" href="/static/json/manifest.json" crossorigin="use-credentials">
+
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Symbols:FILL@0..1&display=block"
+    rel="preload" as="style" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,400i,500,500i,600,600i,700,700i&display=swap"
+    rel="stylesheet" media="print" id="async-google-font-1" />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Symbols:FILL@0..1&display=block"
+    rel="stylesheet" media="print" id="async-google-font-2" />
+  <script nonce="nhTGsIOFrUMVW2LM8ZoRGQ==" type="text/javascript">
+    const styleSheetIds = ["async-google-font-1", "async-google-font-2"];
+    styleSheetIds.forEach(function (id) {
+      document.getElementById(id).addEventListener("load", function() {
+        this.media = "all";
+      });
+    });
+  </script>
+
+
+    <link rel="canonical" href="https://www.kaggle.com/datasets/mrgeislinger/bart-ridership" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/vendor.css?v=dne" />
+    <link rel="stylesheet" type="text/css" href="/static/assets/app.css?v=848ad18ae115f31b810a" />
+
+  
+    
+ 
+      <script nonce="nhTGsIOFrUMVW2LM8ZoRGQ==">
+        try{(function(a,s,y,n,c,h,i,d,e){d=s.createElement("style");
+        d.appendChild(s.createTextNode(""));s.head.appendChild(d);d=d.sheet;
+        y=y.map(x => d.insertRule(x + "{ opacity: 0 !important }"));
+        h.start=1*new Date;h.end=i=function(){y.forEach(x => x<d.cssRules.length ? d.deleteRule(x) : {})};
+        (a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+        })(window,document,['.site-header-react__nav'],'dataLayer',2000,{'GTM-52LNT9S':true});}catch(ex){}
+    </script>
+    <script nonce="nhTGsIOFrUMVW2LM8ZoRGQ==">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-T7QHS60L4Q', {
+            'optimize_id': 'GTM-52LNT9S',
+            'displayFeaturesTask': null,
+            'send_page_view': false,
+            'content_group1': 'Datasets'
+        });
+    </script>
+    <script nonce="nhTGsIOFrUMVW2LM8ZoRGQ==" async src="https://www.googletagmanager.com/gtag/js?id=G-T7QHS60L4Q"></script>
+
+  
+    
+    <meta property="og:url" content="https://www.kaggle.com/datasets/mrgeislinger/bart-ridership" />
+    <meta property="og:title" content="BART Ridership" />
+    <meta property="og:description" content="Bay Area Rapid Transit hourly ridership broken up by year (starting 2011)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://storage.googleapis.com/kaggle-datasets-images/766630/1322007/d9981d2a63101948ca52ef5e0040e53f/dataset-card.jpg?t=2020-07-09-22-32-55" />
+    <meta property="fb:app_id" content="2665027677054710" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kaggledatasets" />
+        <meta name="twitter:creator" content="@MrGeislinger" />
+
+
+  <meta name="twitter:site" content="@Kaggle" /> 
+  
+    
+            <script nonce="nhTGsIOFrUMVW2LM8ZoRGQ==" type="application/ld+json">{"@context":"http://schema.org/","@type":"Dataset","name":"BART Ridership","description":"# UPDATE:\n\n&gt; This dataset **will no longer be maintained** but will remain available for reference. Data will go to **2023-05-02**. Please reference this Kaggle dataset for the most recent data: [kaggle.com/mrgeislinger/bartridership/](https://www.kaggle.com/mrgeislinger/bartridership/)\n\n<hr> \n\n### Context\n\nBay Area Rapid Transit or [BART](https://www.bart.gov/) is a public rail system that connects much of [California's San Francisco Bay Area](https://en.wikipedia.org/wiki/San_Francisco_Bay_Area). The transport system [\"connects the San Francisco Peninsula with Berkeley, Oakland, Fremont, Walnut Creek, Dublin/Pleasanton and other cities in the East Bay\"](https://www.bart.gov/about).\n\n### Content\n\nThis dataset is the most detailed information of trip information for BART and was provided by BART [directly](https://www.bart.gov/about/reports/ridership). Specifically, this data was pulled from the provided source [http://64.111.127.166/origin-destination/](http://64.111.127.166/origin-destination/). The data are automatically updated on the site and BART says they [\"are usually available by the 5th of the next month\"](https://www.bart.gov/about/reports/ridership). This is done with the following notebook \n[https://www.kaggle.com/mrgeislinger/bart-hourly-ridership](https://www.kaggle.com/mrgeislinger/bart-hourly-ridership)\n### Acknowledgements\n\nThis obviously wouldn't be available without BART [collecting and providing the data](https://www.bart.gov/about/reports/ridership). It's great that the data is publicly available to this essential transportation to those living in the Bay Area!\n\n### Inspiration\n\nThis data was originally pulled in July 2020 during the [COVID-19 pandemic](https://en.wikipedia.org/wiki/COVID-19_pandemic). As counties in the Bay Area begin relaxing quarantine/lockdown restrictions yet an increase of COVID-19 cases continues, it could be important to see how public transportation has changed. It's possible to see the travel habits of different areas in the Bay.\n","url":"https://www.kaggle.com/mrgeislinger/bart-ridership","version":12,"keywords":["data type, tabular","subject, science and technology, transportation","subject, people and society, business, travel","subject, science and technology, transportation, rail transport"],"license":{"@type":"CreativeWork","name":"Attribution 4.0 International (CC BY 4.0)","url":"https://creativecommons.org/licenses/by/4.0/"},"identifier":["766630"],"includedInDataCatalog":{"@type":"DataCatalog","name":"Kaggle","url":"https://www.kaggle.com"},"creator":{"@type":"Person","name":"Victor Geislinger","url":"https://www.kaggle.com/mrgeislinger","image":"https://storage.googleapis.com/kaggle-avatars/thumbnails/1636665-kg.jpeg"},"distribution":[{"@type":"DataDownload","requiresSubscription":true,"encodingFormat":"zip","fileFormat":"zip","contentUrl":"https://www.kaggle.com/datasets/mrgeislinger/bart-ridership/download?datasetVersionNumber=12","contentSize":"413379550 bytes"}],"commentCount":2,"dateModified":"2023-05-22T23:38:52.303Z","discussionUrl":"https://www.kaggle.com/mrgeislinger/bart-ridership/discussion","alternateName":"Bay Area Rapid Transit hourly ridership broken up by year (starting 2011)","isAccessibleForFree":true,"thumbnailUrl":"https://storage.googleapis.com/kaggle-datasets-images/766630/1322007/d9981d2a63101948ca52ef5e0040e53f/dataset-card.jpg?t=2020-07-09-22-32-55","interactionStatistic":[{"@type":"InteractionCounter","interactionType":"http://schema.org/CommentAction","userInteractionCount":2},{"@type":"InteractionCounter","interactionType":"http://schema.org/DownloadAction","userInteractionCount":947},{"@type":"InteractionCounter","interactionType":"http://schema.org/ViewAction","userInteractionCount":15500},{"@type":"InteractionCounter","interactionType":"http://schema.org/LikeAction","userInteractionCount":50}]}</script>
+        
+
+  
+    
+
+  
+    
+
+
+    <script nonce="nhTGsIOFrUMVW2LM8ZoRGQ==">window['useKaggleAnalytics'] = true;</script>
+
+  <script id="gapi-target" nonce="nhTGsIOFrUMVW2LM8ZoRGQ==" src="https://apis.google.com/js/api.js" defer
+    async></script>
+  <script nonce="nhTGsIOFrUMVW2LM8ZoRGQ==" src="/static/assets/runtime.js?v=59a05b2445c4ad6d2ecf"></script>
+  <script nonce="nhTGsIOFrUMVW2LM8ZoRGQ==" src="/static/assets/vendor.js?v=b61216e9836b44237b10"></script>
+  <script nonce="nhTGsIOFrUMVW2LM8ZoRGQ==" src="/static/assets/app.js?v=59774b5b487ae684f8ab"></script>
+    <script nonce="nhTGsIOFrUMVW2LM8ZoRGQ==" type="text/javascript">
+      window.kaggleStackdriverConfig = {
+        key: 'AIzaSyA4eNqUdRRskJsCZWVz-qL655Xa5JEMreE',
+        projectId: 'kaggle-161607',
+        service: 'web-fe',
+        version: 'ci',
+        userId: '20116547'
+      }
+    </script>
+</head>
+<body>
+<main>
+    
+
+
+
+
+
+<div id="site-container"></div>
+
+<div id="site-body" class="hide">
+    
+
+
+<script nonce="nhTGsIOFrUMVW2LM8ZoRGQ==" type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+    preferredFont: "TeX",
+    availableFonts: ["STIX", "TeX"],
+    linebreaks: {
+    automatic: true
+    },
+    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+    inlineMath: [["\\(", "\\)"], ["\\\\(", "\\\\)"]],
+    displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+    processEscapes: true,
+    ignoreClass: "tex2jax_ignore|dno"
+    },
+    TeX: {
+    noUndefined: {
+    attributes: {
+    mathcolor: "red",
+    mathbackground: "#FFEEEE",
+    mathsize: "90%"
+    }
+    }
+    },
+    Macros: {
+    href: "{}"
+    },
+    skipStartupTypeset: true,
+    messageStyle: "none",
+    extensions: ["Safe.js"],
+    });
+</script>
+<script type="text/javascript" nonce="nhTGsIOFrUMVW2LM8ZoRGQ==">
+  window.addEventListener("DOMContentLoaded", () => {
+    const head = document.getElementsByTagName("head")[0];
+    const lib = document.createElement("script");
+    lib.type = "text/javascript";
+    // Always use the production asset in local dev, which is served from GCS. We tried to proxy and / or serve this
+    // in a better way in localhost, but it didn't work out. See b/328073416#comment8 for details.
+    const forceProdHost = window.location.hostname === "localhost";
+    lib.src = `${forceProdHost ? "https://www.kaggle.com" : ""}/static/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML`;
+    head.appendChild(lib);
+  });
+</script>
+
+
+
+
+
+
+</div>
+
+
+
+    <!-- Cheers, web-7c7b976fd5-h2vktp. -->
+
+  </main>
+</body>
+
+</html>
